@@ -1,8 +1,10 @@
 package SpringBootCore.core.order;
 
 import SpringBootCore.core.discount.DiscountPolicy;
+import SpringBootCore.core.discount.FixDiscountPolicy;
 import SpringBootCore.core.member.Member;
 import SpringBootCore.core.member.MemberRepository;
+import SpringBootCore.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService {
 

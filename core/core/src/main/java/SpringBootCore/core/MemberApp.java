@@ -3,13 +3,11 @@ package SpringBootCore.core;
 import SpringBootCore.core.member.Grade;
 import SpringBootCore.core.member.Member;
 import SpringBootCore.core.member.MemberService;
+import SpringBootCore.core.member.MemberServiceImpl;
 
 public class MemberApp {
-
     public static void main(String[] args) {
-        AppConfig appconfig = new AppConfig();
-        MemberService memberService = appconfig.memberService();
-//        MemberService memberService = new MemberServiceImpl();
+        MemberService memberService = new MemberServiceImpl();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
