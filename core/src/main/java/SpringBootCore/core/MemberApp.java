@@ -14,7 +14,9 @@ public class MemberApp {
 //        MemberService memberService = new MemberServiceImpl();
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        // AppConfig에서 정의한 @Bean 설정 정보를 읽어와 memberService 객체를 생성후 초기화한다.
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+        // getBean은 AppConfig class에 memberService method를 사용하겠다는 뜻
 
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);

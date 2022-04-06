@@ -18,6 +18,8 @@ public class OrderServiceImpl implements OrderService {
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
         Member member = memberRepository.findById(memberId);
         int discountPrice = discountPolicy.discount(member, itemPrice);
+        // AppConfig class에서 discountPolicy method를 이용하여 RateDiscountPolicy를 매칭시킴.
+        // DiscountPolicy interface -> AppConfig에서 메소드 확인 -> RateDiscountPolicy class ->
 
         return new Order(memberId, itemName, itemPrice, discountPrice);
     }
