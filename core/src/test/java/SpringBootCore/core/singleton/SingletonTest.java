@@ -45,7 +45,7 @@ public class SingletonTest {
         System.out.println("singletonService1 = " + singletonService1);
         System.out.println("singletonService2 = " + singletonService2);
 
-        // singletonService1 == singletonService2
+        //singletonService1 == singletonService2
         assertThat(singletonService1).isSameAs(singletonService2);
         singletonService1.logic();
     }
@@ -53,7 +53,6 @@ public class SingletonTest {
     @Test
     @DisplayName("스프링 컨테이너와 싱글톤")
     void springContainer() {
-
 //        AppConfig appConfig = new AppConfig();
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService1 = ac.getBean("memberService", MemberService.class);
