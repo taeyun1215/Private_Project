@@ -1,5 +1,6 @@
 package SpringBootCore.core.order;
 
+import SpringBootCore.core.annotation.MainDiscountPolicy;
 import SpringBootCore.core.discount.DiscountPolicy;
 import SpringBootCore.core.member.Member;
 import SpringBootCore.core.member.MemberRepository;
@@ -13,7 +14,7 @@ public class OrderServiceImpl implements OrderService {
     private final DiscountPolicy discountPolicy;
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
